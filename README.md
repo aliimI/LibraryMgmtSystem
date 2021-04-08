@@ -6,7 +6,7 @@ Technologies:
  Spring Boot, Thymeleaf, MVC
 
 Functional requirements
-This application manages many aspects of the online university library system, which includes:
+This application manages many aspects of the online university library system, which includes: <br />
 -search, cataloging;
 -create, delete, edit, book publication;
 -add authors, books categories
