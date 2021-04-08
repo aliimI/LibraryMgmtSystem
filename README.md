@@ -11,7 +11,13 @@ This application manages many aspects of the online university library system, w
 -create, delete, edit, book publication;<br />
 -add authors, books categories<br />
 
+Cataloging <br />
+1. Librarian can manage the catalog of the books. <br />
+2. Book contains next properties: <br />
+ISBN, Book Name, Author, Description
+
 Users and authentication<br />
 There are two roles – admin(librarian)/ user<br />
 Admin(librarian) can cataloging items, add, delete and edit.<br />
 User can search books and add them to profile page.<br />
+
