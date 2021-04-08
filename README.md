@@ -8,8 +8,8 @@ Technologies: <br />
 Functional requirements
 This application manages many aspects of the online university library system, which includes: <br />
 -search(by ISBN, name;  enter author name and find all authors books), cataloging;<br />
--create, delete, edit, book publication(librarian privilege);<br />
--add authors, books categories<br />
+-create, delete, edit, book publication, add authors(librarian privilege);<br />
+-books categories<br />
 
 Cataloging <br />
 1. Librarian can manage the catalog of the books. <br />
