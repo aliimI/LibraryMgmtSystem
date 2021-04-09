@@ -22,4 +22,4 @@ Admin(librarian) can cataloging items, add, delete and edit.<br />
 User can search books and add them to profile page.<br />
 
 Main page will contain the following tabs: <br />
-Home, books, categories, authors
+Home, books, categories, authors, profile
