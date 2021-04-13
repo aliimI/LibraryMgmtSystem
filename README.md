@@ -22,12 +22,13 @@ Admin(librarian) can cataloging items, add, delete and edit.<br />
 User can search books and add them to profile page.<br />
 
 Main page will contain the following tabs: <br />
-Home, profile, books, categories, authors
+Home, profile, books, categories, authors<br />
+
 
 
 Plan <br />
 3week: creating authorization page <br />
-4week: creating database and connecting to db
-5-6week: creating backend(controllers, entity(author, book, category), repositories)
-7 week: finishing with backend
-8 week: building web application frontend
+4week: creating database and connecting to db <br />
+5-6week: creating backend(controllers, entity(author, book, category), repositories)<br />
+7 week: finishing with backend<br />
+8 week: building web application frontend<br />
