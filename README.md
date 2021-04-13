@@ -23,8 +23,9 @@ User can search books and add them to profile page.<br />
 
 Main page will contain the following tabs: <br />
 Home, profile, books, categories, authors<br />
-
-
+<br />
+<br />
+<br />
 
 Plan <br />
 3week: creating authorization page <br />
