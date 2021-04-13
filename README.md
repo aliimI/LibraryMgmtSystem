@@ -32,4 +32,4 @@ Plan <br />
 4week: creating database and connecting to db <br />
 5-6week: creating backend(controllers, entity(author, book, category), repositories)<br />
 7 week: finishing with backend<br />
-8 week: building web application frontend<br />
+8 week: building web application frontend and testing the app<br />
