@@ -33,3 +33,4 @@ Plan <br />
 5-6week: creating backend(controllers, entity(author, book, category), repositories)<br />
 7 week: testing  backend<br />
 8 week: building web application frontend and testing the app<br />
+9 week: functionality for providing recommendations based on the history of borrowed books
