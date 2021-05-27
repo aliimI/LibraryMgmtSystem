@@ -5,6 +5,20 @@
     <meta charset="UTF-8">
     <title>Home Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        html {
+            background: url("http://www.estidia.eu/wp-content/uploads/2018/04/Savin-NY-Website-Background-Web.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+        }
+
+        button{
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -16,23 +30,14 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="/profile">Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
+                <a class="nav-link" href="/categories">Show Categories</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/categories">Categories</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/books">Books</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/publishers">Publishers</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/authors">Authors</a>
+                <a class="nav-link" href="/books">My Books</a>
             </li>
         </ul>
         <form th:action="@{/searchBook}" class="form-inline my-2 my-lg-0">
@@ -40,7 +45,8 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         <sec:authorize access="isAuthenticated()">
-            <h4><a href="/logout">Log out</a></h4>
+            <!-- <h4><a href="/logout">Log out</a></h4> -->
+            <a href="/logout" class="btn btn-info btn-lg">Log out</a>
         </sec:authorize>
     </div>
 </nav>
