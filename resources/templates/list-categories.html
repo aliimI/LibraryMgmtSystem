@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List books categories</title>
+    <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div th:switch="${categories}">
+        <div>
+            <h2 th:case="null">No records yet</h2>
+            <div th:case="*">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Category Name</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="category : ${categories}">
+                        <td th:text="${category.name}"></td>
+                        <td><a th:href="@{/updateCategory/{id}(id=${category.id})}" class="btn btn-primary">Edit</a></td>
+                        <td><a th:href="@{/remove-category/{id}(id=${category.id})}" class="btn btn-primary">Delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

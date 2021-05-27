@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List all authors</title>
+    <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div th:switch="authors">
+        <h2 th:case="null">No record found !!</h2>
+        <div th:case="*">
+            <table class="table table-striped table-responsive-md">
+                <thead>
+                <tr>
+                    <th>Author Name</th>
+                    <th>Description</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="author : ${authors}">
+                    <td th:text="${author.name}"></td>
+                    <td th:text="${author.description}"></td>
+                    <td><a th:href="@{/updateAuthor/{id}(id=${author.id})}" class="btn btn-primary">Edit</a></td>
+                    <td><a th:href="@{/remove-author/{id}(id=${author.id})}" class="btn btn-primary">Delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>

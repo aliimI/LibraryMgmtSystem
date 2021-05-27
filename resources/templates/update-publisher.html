@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Publisher</title>
+</head>
+<body>
+<div>
+    <form action="#" th:action="@{/update-publisher/{id}(id=${publisher.id})}" th:object="${publisher}" method="post">
+
+         <div>
+                <label for="name">Publisher Name</label>
+                <input type="text" th:field="*{name}" id="name" placeholder="Publisher Name" />
+         </div>
+
+            <div>
+                <input type="submit" value=" Submit ">
+            </div>
+    </form>
+</div>
+
+</body>
+</html>
