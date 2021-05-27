@@ -3,56 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Book</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body {
+            background: url("https://oldschoolgrappling.com/wp-content/uploads/2018/08/Background-opera-speeddials-community-web-simple-backgrounds.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .main{
+            width: 45%;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-<div>
+<div class="main">
+
+    <h3>Add Book to Library</h3>
+    <img src="https://cdn4.iconfinder.com/data/icons/menu-elements/154/book-bible-key-round-function-512.png" width="40px" height="40px">
     <form action="#" th:action="@{/add-book}" th:object="${book}" method="post">
 
-        <div>
+        <div class="form-group">
             <label for="isbn">ISBN</label>
-            <input type="text" th:field="*{isbn}" id="isbn" placeholder="ISBN" />
+            <input type="text" th:field="*{isbn}" id="isbn" placeholder="ISBN" class="form-control">
             <span th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}"></span>
         </div>
 
-        <div>
+        <div class="form-group">
             <label for="name">Book Name</label>
-            <input type="text" id="name" th:field="*{name}" placeholder="Book Name">
+            <input type="text" id="name" th:field="*{name}" placeholder="Book Name" class="form-control">
         </div>
 
-        <div>
+        <div class="form-group">
             <label for="serialName" >SerialName </label>
-            <input type="text" th:field="*{serialName}" id="serialName" placeholder="Serial Name" />
+            <input type="text" th:field="*{serialName}" id="serialName" placeholder="Serial Name" class="form-control">
         </div>
 
-        <div>
+        <div class="form-group">
             <label for="description">Description</label>
-            <input type="text" th:field="*{description}"  id="description" placeholder="Description" />
+            <input type="text" th:field="*{description}"  id="description" placeholder="Description" class="form-control">
         </div>
 
-        <div>
+        <div class="form-group">
             <label for="category">Category</label>
-            <select th:field ="*{categories}" id="category">
+            <select th:field ="*{categories}" id="category" class="form-control">
                 <option th:each="category: ${categories}" th:value="${category.id}" th:text = "${category.name}"></option>
             </select>
         </div>
 
-        <div>
+        <div class="form-group">
             <label for="author">Author</label>
-            <select th:field ="*{authors}" id="author">
+            <select th:field ="*{authors}" id="author" class="form-control">
                 <option th:each="author: ${authors}" th:value="${author.id}" th:text = "${author.name}"></option>
             </select>
         </div>
 
-        <div>
+        <div class="form-group">
             <label for="publisher">Publisher</label>
-            <select th:field ="*{publishers}" id="publisher" >
+            <select th:field ="*{publishers}" id="publisher" class="form-control">
                 <option th:each="publisher: ${publishers}" th:value="${publisher.id}" th:text = "${publisher.name}"></option>
             </select>
         </div>
 
         <div>
-            <input type="submit" value=" Submit ">
+            <input type="submit" value="Add" class="btn btn-primary">
+            <button type="submit" class="btn btn-warning"><a href="/adminprofile">Back</a></button>
         </div>
+
 
     </form>
 </div>

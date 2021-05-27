@@ -3,19 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Publisher</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body {
+            background: url("https://cdn6.f-cdn.com/contestentries/1105126/24851077/598dc2570cb48_thumb900.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .main{
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding: 15px;
+            border: 1px solid #dfdcdc71;
+            background-color: #ffffff7e;
+        }
+        h3{
+            color: yellow;
+            background-color: rgba(156, 156, 156, 0.61);
+        }
+    </style>
 </head>
 <body>
-<div>
+<div class="main">
     <form action="#" th:action="@{/update-publisher/{id}(id=${publisher.id})}" th:object="${publisher}" method="post">
 
-         <div>
-                <label for="name">Publisher Name</label>
-                <input type="text" th:field="*{name}" id="name" placeholder="Publisher Name" />
-         </div>
+        <div  class="form-group">
+            <label for="name">Publisher Name</label>
+            <input type="text" th:field="*{name}" id="name" placeholder="Publisher Name" class="form-control">
+        </div>
 
-            <div>
-                <input type="submit" value=" Submit ">
-            </div>
+        <div  class="form-group">
+            <input type="submit" value="Update" class="btn btn-warning">
+        </div>
     </form>
 </div>
 

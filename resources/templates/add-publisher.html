@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Publisher</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body {
+            background: url("https://oldschoolgrappling.com/wp-content/uploads/2018/08/Background-opera-speeddials-community-web-simple-backgrounds.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .main{
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding: 15px;
+            border: 1px solid #dfdcdc71;
+            background-color: #ffffff7e;
+
+        }
+    </style>
 </head>
 <body>
-<div>
+<div class="main">
+    <h3>Add Bublisher to Library</h3>
+    <img src="https://icon-library.com/images/author-icon/author-icon-8.jpg" width="50px" height="50px">
     <form action="#" th:action="@{/add-publisher}" th:object="${publisher}" method="post">
-            <div>
-                <label for="name" >Publisher Name</label>
-                <input type="text" th:field="*{name}"  id="name" placeholder="Publisher Name" />
-            </div>
+        <div class="form-group">
 
-            <div >
-                <input type="submit" value=" Submit ">
-            </div>
+            <label for="name" >Publisher Name</label>
+            <input type="text" th:field="*{name}"  id="name" placeholder="Publisher Name" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Add"  class="btn btn-primary">
+            <button type="submit" class="btn btn-warning"><a href="/adminprofile">Back</a></button>
+        </div>
+
     </form>
 </div>
 

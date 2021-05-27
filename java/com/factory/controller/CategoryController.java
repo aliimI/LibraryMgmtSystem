@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -20,10 +21,13 @@ public class CategoryController {
     }
 
     @RequestMapping("/categories")
-    public String findAllCategories(Model model){
+    public String findAllCategories(Model model, HttpServletRequest request){
         final List<Category> categories = categoryService.findAllCategories();
 
         model.addAttribute("categories", categories);
+        if(request.isUserInRole("USER")){
+            return "redirect:/list-categories-user";
+        }
         return "list-categories";
     }
 

@@ -3,24 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Author</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body {
+            background: url("https://oldschoolgrappling.com/wp-content/uploads/2018/08/Background-opera-speeddials-community-web-simple-backgrounds.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .main{
+            width: 45%;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding: 15px;
+            border: 1px solid #dfdcdc71;
+            background-color: #ffffff7e;
+        }
+    </style>
 </head>
 <body>
 
-<div>
+<div class="main">
+    <h3>Add author</h3>
+    <img src="https://cdn2.iconfinder.com/data/icons/actions-2/24/pencil-circle-2-512.png"  width="40px" height="40px">
     <form action="#" th:action="@{/add-author}" th:object="${author}" method="post">
-            <div>
-                <label for="name">Author Name</label>
-                <input type="text" th:field="*{name}" id="name" placeholder="Author Name" />
-            </div>
+        <div class="form-group">
+            <label for="name">Author Name</label>
+            <input type="text" th:field="*{name}" id="name" placeholder="Author Name" class="form-control">
+        </div>
 
-            <div>
-                <label for="description">Description</label>
-                <input type="text" th:field="*{description}" id="description" placeholder="Description" />
-            </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" th:field="*{description}" id="description" placeholder="Description" class="form-control">
+        </div>
 
-            <div class="col-md-6">
-                <input type="submit" value=" Submit ">
-            </div>
+        <div class="form-group">
+            <input type="submit" value="Add" class="btn btn-primary">
+            <button type="submit" class="btn btn-warning"><a href="/adminprofile">Back</a></button>
+        </div>
+
     </form>
 
 </div>

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -33,10 +34,14 @@ public class BookController {
     }
 
     @RequestMapping("/books")
-    public String findAllBooks(Model model){
+    public String findAllBooks(Model model, HttpServletRequest request){
         final List<Book> books = bookService.findAllBooks();
         model.addAttribute("books", books);
+        if(request.isUserInRole("USER")){
+            return "redirect:/list-books-user";
+        }
         return "list-books";
+
     }
 
     @RequestMapping("/searchBook")
