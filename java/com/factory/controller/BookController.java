@@ -53,13 +53,15 @@ public class BookController {
         return "list-books";
     }
 
-    @RequestMapping("/book/{id}")
+    @GetMapping("/book/{id}")
     public String findBookById(@PathVariable("id") Long id, Model model) {
         final Book book = bookService.findBookById(id);
 
         model.addAttribute("book", book);
         return "list-book";
     }
+
+
 
     @GetMapping("/add")
     public String showCreateForm(Book book, Model model){
@@ -106,5 +108,7 @@ public class BookController {
         model.addAttribute("book", bookService.findAllBooks());
         return "redirect:/books";
     }
+
+
 
 }

@@ -18,6 +18,47 @@
         button{
             margin: 10px;
         }
+
+        .scrolling-wrapper {
+            margin-top: 100px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+
+        .card {
+            display: inline-block;
+        }
+
+        .card :hover{
+            opacity: 0.5;
+        }
+
+        .container {
+            position: relative;
+            width: 50%;
+            max-width: 200px;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5); /* Black see-through */
+            color: #f1f1f1;
+            width: 100%;
+            transition: .5s ease;
+            opacity:0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+
     </style>
 </head>
 <body>
@@ -58,6 +99,39 @@
         </sec:authorize>
     </div>
 </nav>
+
+<div class="scrolling-wrapper">
+    <div class="card container">
+        <img src="/images/harry_potter_cover1.jpg"
+             width="200px" height="300px" >
+        <div class="overlay">Harry Potter & the Philosopher's Stone </div>
+        <div>
+        <a th:href="@{/update/{id}(id=2)}" class="btn btn-primary">Edit</a>
+        <a th:href="@{/remove-book/{id}(id=2)}" class="btn btn-primary">Delete</a>
+        </div>
+    </div>
+
+    <div class="card container">
+        <img src="/images/alice_cover1.jpg"
+             width="200px" height="300px" >
+        <div class="overlay">Alice's Adventures in Wonderland / Through the Looking-Glass</div>
+        <div>
+        <a th:href="@{/update/{id}(id=4)}" class="btn btn-primary">Edit</a>
+        <a th:href="@{/remove-book/{id}(id=4)}" class="btn btn-primary">Delete</a>
+        </div>
+    </div>
+
+    <div class="card container">
+        <img src="/images/lor_cover1.jpg"
+             width="200px" height="300px" >
+        <div class="overlay">Lord Of The Rings: The fellowship of the ring</div>
+
+        <div>
+        <a th:href="@{/update/{id}(id=1)}" class="btn btn-primary">Edit</a>
+        <a th:href="@{/remove-book/{id}(id=1)}" class="btn btn-primary">Delete</a>
+    </div>
+</div>
+
 
 </body>
 </html>

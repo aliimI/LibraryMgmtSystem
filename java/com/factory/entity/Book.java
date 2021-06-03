@@ -42,6 +42,7 @@ public class Book {
     @Column(name = "description", length = 250, nullable = false)
     private String description;
 
+
     @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE })
     @JoinTable(name = "books_authors", joinColumns = { @JoinColumn(name = "book_id") }, inverseJoinColumns = {
             @JoinColumn(name = "author_id") })

@@ -18,6 +18,60 @@
         button{
             margin: 10px;
         }
+
+        .scrolling-wrapper {
+            margin-top: 100px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+
+        .card {
+            display: inline-block;
+        }
+
+        .card :hover{
+            opacity: 0.5;
+        }
+
+        .container {
+            position: relative;
+            width: 50%;
+            max-width: 200px;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5); /* Black see-through */
+            color: #f1f1f1;
+            width: 100%;
+            transition: .5s ease;
+            opacity:0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        a {
+            color: #a5a4a4;
+            text-decoration: none;
+        }
+
+
+        a:hover {
+            color: white;
+            text-decoration:none;
+            cursor:pointer;
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -50,6 +104,36 @@
         </sec:authorize>
     </div>
 </nav>
+
+<div class="scrolling-wrapper">
+    <div class="card container">
+        <img src="/images/harry_potter_cover1.jpg"
+             width="200px" height="300px" >
+        <div class="overlay"><a href="/book/12">Harry Potter & the Philosopher's Stone</a> </div>
+    </div>
+
+    <div class="card container">
+        <img src="/images/alice_cover1.jpg"
+             width="200px" height="300px" >
+        <div class="overlay"><a href="/book/11">Alice's Adventures in Wonderland / Through the Looking-Glass</a> </div>
+    </div>
+
+    <div class="card container">
+        <img src="/images/lor_cover1.jpg"
+             width="200px" height="300px" >
+        <div class="overlay"><a href="/book/10">Lord Of The Rings: The fellowship of the ring</a> </div>
+    </div>
+
+
+    <div class="card container">
+        <img src="/images/hunger-cover1.jpg"
+             width="200px" height="300px" >
+        <div class="overlay"><a href="/book/9">The Hunger Games</a> </div>
+    </div>
+
+
+</div>
+
 
 </body>
 </html>
