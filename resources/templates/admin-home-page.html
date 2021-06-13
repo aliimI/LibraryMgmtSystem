@@ -101,36 +101,71 @@
 </nav>
 
 <div class="scrolling-wrapper">
+    <div  id="myDIV1">
     <div class="card container">
         <img src="/images/harry_potter_cover1.jpg"
              width="200px" height="300px" >
         <div class="overlay">Harry Potter & the Philosopher's Stone </div>
-        <div>
-        <a th:href="@{/update/{id}(id=2)}" class="btn btn-primary">Edit</a>
-        <a th:href="@{/remove-book/{id}(id=2)}" class="btn btn-primary">Delete</a>
-        </div>
+    </div>
+    <div>
+        <a th:href="@{/update/{id}(id=5)}" class="btn btn-primary">Edit</a>
+        <a th:href="@{/remove-book/{id}(id=5)}" class="btn btn-primary" onclick="myFunction1()">Delete</a>
+    </div>
     </div>
 
-    <div class="card container">
+    <div id="myDIV2">
+    <div class="card container" >
         <img src="/images/alice_cover1.jpg"
              width="200px" height="300px" >
         <div class="overlay">Alice's Adventures in Wonderland / Through the Looking-Glass</div>
-        <div>
-        <a th:href="@{/update/{id}(id=4)}" class="btn btn-primary">Edit</a>
-        <a th:href="@{/remove-book/{id}(id=4)}" class="btn btn-primary">Delete</a>
-        </div>
+
+    </div>
+    <div>
+        <a th:href="@{/update/{id}(id=1)}" class="btn btn-primary">Edit</a>
+        <a th:href="@{/remove-book/{id}(id=1)}" class="btn btn-primary" onclick="myFunction2()">Delete</a>
+    </div>
     </div>
 
+    <div id="myDIV3">
     <div class="card container">
         <img src="/images/lor_cover1.jpg"
              width="200px" height="300px" >
         <div class="overlay">Lord Of The Rings: The fellowship of the ring</div>
-
-        <div>
-        <a th:href="@{/update/{id}(id=1)}" class="btn btn-primary">Edit</a>
-        <a th:href="@{/remove-book/{id}(id=1)}" class="btn btn-primary">Delete</a>
     </div>
+    <div >
+        <a th:href="@{/update/{id}(id=3)}" class="btn btn-primary">Edit</a>
+        <a th:href="@{/remove-book/{id}(id=3)}" class="btn btn-primary" onclick="myFunction3()">Delete</a>
+    </div>
+    </div>
+
 </div>
+
+<script>
+    function myFunction3() {
+        var x = document.getElementById("myDIV3");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    function myFunction2() {
+        var x = document.getElementById("myDIV2");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    function myFunction1() {
+        var x = document.getElementById("myDIV1");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
 
 
 </body>

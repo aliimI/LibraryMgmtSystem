@@ -50,4 +50,32 @@ public class AuthorController {
         model.addAttribute("author", authorService.findAllAuthors());
         return "redirect:/authors";
     }
+
+    @GetMapping("/updateAuthor/{id}")
+    public String showUpdateForm(@PathVariable("id") Long id, Model model) {
+        final Author author = authorService.findAuthorById(id);
+
+        model.addAttribute("author", author);
+        return "update-author";
+    }
+
+    @RequestMapping("/update-author/{id}")
+    public String updateAuthor(@PathVariable("id") Long id, Author author, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            author.setId(id);
+            return "update-author";
+        }
+
+        authorService.updateAuthor(author);
+        model.addAttribute("author", authorService.findAllAuthors());
+        return "redirect:/authors";
+    }
+
+    @RequestMapping("/remove-author/{id}")
+    public String deleteAuthor(@PathVariable("id") Long id, Model model) {
+        authorService.deleteAuthor(id);
+
+        model.addAttribute("author", authorService.findAllAuthors());
+        return "redirect:/authors";
+    }
 }
